@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #000;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover {
+    color: #2563eb;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.custom-btn {
+    width: 200px;
+    margin: auto;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.footer h5 {
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    color: #6c757d;
+    margin-top: 15px;
+}
+
+.footer ul li {
+    margin-bottom: 12px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #424242;      /* Muted black */
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #387ed1;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #424242;
+    font-size: 22px;
+    margin-right: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #387ed1;
+}
+
+#supportTicket {
+  background-color: #0252ff;
+}
+
+#supportRow {
+  min-height: 180px;
+}
+
+#supportRow a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#supportRow a:hover {
+  background-color: white;
+  color: #0252ff !important;
+}
+
+/* Search input */
+#supportTicket input {
+  width: 85%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Links below search */
+#supportTicket .d-flex a {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#supportTicket .d-flex a:hover {
+  opacity: 0.8;
+}
+
+/* Featured links */
+#supportTicket ol a {
+  color: white;
+  text-decoration: none;
+}
+
+#supportTicket ol a:hover {
+  text-decoration: underline;
+}

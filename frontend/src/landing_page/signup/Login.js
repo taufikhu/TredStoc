@@ -1,0 +1,123 @@
+import React, { useState } from "react";
+import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+
+const Login = () => {
+  const navigate = useNavigate();
+
+  const [inputValue, setInputValue] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { email, password } = inputValue;
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+
+    setInputValue({
+      ...inputValue,
+      [name]: value,
+    });
+  };
+
+  const handleError = (message) => {
+    toast.error(message, {
+      position: "bottom-left",
+    });
+  };
+
+  const handleSuccess = (message) => {
+    toast.success(message, {
+      position: "bottom-left",
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const { data } = await axios.post(
+        "http://localhost:8080/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+
+      console.log("Login response:", data);
+
+      if (data.success) {
+        handleSuccess(data.message);
+        localStorage.setItem("username", data.username);
+
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      } else {
+        handleError(data.message);
+      }
+    } catch (error) {
+      console.log("Login error:", error);
+
+      // Backend error message
+      if (error.response?.data?.message) {
+        handleError(error.response.data.message);
+      } else {
+        handleError("Something went wrong. Please try again.");
+      }
+    }
+  };
+
+  return (
+    <div className="form_container">
+      <h2>Login Account</h2>
+
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="email">Email</label>
+
+          <input
+            id="email"
+            type="email"
+            name="email"
+            value={email}
+            placeholder="Enter your email"
+            onChange={handleOnChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="password">Password</label>
+
+          <input
+            id="password"
+            type="password"
+            name="password"
+            value={password}
+            placeholder="Enter your password"
+            onChange={handleOnChange}
+            required
+          />
+        </div>
+
+        <button type="submit">Login</button>
+
+        <span>
+          Don't have an account?{" "}
+          <Link to="/signup">Signup</Link>
+        </span>
+      </form>
+
+      <ToastContainer />
+    </div>
+  );
+};
+
+export default Login;
