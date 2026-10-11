@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.topbar-container {
+  height: 90px;
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.indices-container {
+  width: 42%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-right: 1px solid #ddd;
+}
+
+.nifty,
+.sensex {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.index {
+  font-size: 13px;
+  color: #666;
+}
+
+.index-points {
+  font-size: 13px;
+  color: #d9534f;
+}
+
+.menu-container {
+  width: 58%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.menu-container a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+
+.menu-container a:hover {
+  color: #387ed1;
+}
+
+.menu-container a.active-menu {
+  color: #387ed1;
+  font-weight: 500;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-left: 1px solid #ddd;
+  padding-left: 20px;
+}
+
+.profile span {
+  background-color: #f3e8f8;
+  color: #b06cc7;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 11px;
+}
+
+.profile p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: calc(100vh - 90px);
+}
+
+.watchlist-container {
+  width: 42%;
+  border-right: 1px solid #ddd;
+}
+
+.search-container {
+  height: 45px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.search-container input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+}
+
+.search-container span {
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.content {
+  width: 58%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #666;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.order-table {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.order-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.order-table th,
+.order-table td {
+  padding: 10px;
+  text-align: left;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-weight: 500;
+  color: #b6b0b0;
+  font-size: 12px;
+}
+.order-table .profit {
+    color: rgb(8, 198, 8);
+}
+
+.order-table .loss {
+    color: red;
+}
+li{
+  list-style: none;
+  width: 100%;
+
+}
+
+/* .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+.item-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} */
+.item-price {
+  font-size: 15px;
+  color: #000000;
+} 
+
+.down {
+  color: red;
+}
+.up {
+  color: green;
+}
+li .item:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-right: 10px;
+}
+
+.actions .buy, .actions .analytics {
+  background-color: #387ed1;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.actions .sell {
+  background-color: red;
+  color: #000000;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
